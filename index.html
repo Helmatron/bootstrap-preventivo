@@ -59,52 +59,99 @@
     <main>
 
         <!-- CONTEINER -->
-        <div class="container-fluid p-5">
+        <div class="container-fluid px-5 py-4">
             <div class="row justify-content-between">
 
-            <!-- FORM -->
-              <div class="col-sm-12 col-lg-9">
-                <form>
-                    <h1>Richiesta Preventivo</h1>
-                    <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
-                    <div class="mb-3">
-                      <label for="inputName" class="form-label fw-bold">Nome</label>
-                      <input type="text" class="form-control" id="inputName" aria-describedby="inputName">
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputSurname" class="form-label fw-bold">Cognome</label>
-                      <input type="text" class="form-control" id="inputSurname">
-                    </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-              </div>
+                <!-- FORM RACCOLTA DATI-->
+                <div class="col-sm-12 col-lg-9">
+                    <form>
+                        <h1>Richiesta Preventivo</h1>
+                        <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
 
-            <!-- CARD -->
-              <div class="col-lg-3">
-                <div class="card">
-                    <img src="./img/anelli.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <!-- NOME -->
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label fw-bold">Nome</label>
+                            <input type="text" class="form-control" id="inputName" aria-describedby="inputName">
+                        </div>
+                        <!-- COGNOME -->
+                        <div class="mb-3">
+                            <label for="inputSurname" class="form-label fw-bold">Cognome</label>
+                            <input type="text" class="form-control" id="inputSurname">
+                        </div>
+                        <!-- EMAIL -->
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label fw-bold">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+                        </div>
+                        <!-- TIPO DI LAVORO -->
+                        <div class="mb-3">
+                            <label for="inputWorksType" class="form-label fw-bold">Tipo di lavoro</label>
+                            <select id="inputWorksType" class="form-select">
+                                <option selected>Seleziona il tipo di lavoro</option>
+                                <option value="backend">Backend Development</option>
+                                <option value="frontend">Frontend Development</option>
+                                <option value="analysis">Project Analysis</option>
+                            </select>
+                        </div>
+                        <!-- TEXT AREA INFORMAZIONI -->
+                        <div class="mb-3">
+                            <label for="inputDetails" class="form-label fw-bold">Condividi con noi maggiori
+                                dettagli</label>
+                            <textarea class="form-control" id="inputDetails" style="height: 100px;"></textarea>
+                        </div>
+                        <!-- CHECKBOX PRIVACY POLICY -->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
+                        </div>
+
+                        <!-- OUTPUT E STAMPA DEL PREZZO -->
+                        <div class="row justify-content-around gap-3 mb-3 text-center">
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-primary">Calcola Preventivo</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <h5 class="fw-bold">Prezzo finale</h5>
+                                    <p id="price"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- CARD -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./img/anelli.jpg" class="card-img-top" alt="Anello con luce led interna">
+                        <div class="card-body">
+                            <h5 class="card-title">I nostri contatti</h5>
+                            <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">help@boolfactory.test</li>
+                            <li class="list-group-item">+1122334455</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Help desk</a>
+                        </div>
                     </div>
-                  </div>
-              </div>
-              
+                </div>
             </div>
-          </div>
-
+        </div>
 
     </main>
 
     <!-- FOOTER -->
 
     <footer>
+        <div class="conteiner">
+            <div class="footer fixed-bottom">
 
+                <div class="p-4 text-light-emphasis bg-dark text-center" data-bs-theme="dark">
+                    <div>&#169 2024 - Tutti i diritti riservati</div>
+                </div>
+            </div>
     </footer>
 
 

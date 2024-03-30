@@ -1,5 +1,29 @@
+/* RESET */
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+}
+
+
+/* METODO PER FIXARE IL FOOTER IN MODO CHE RESTI IN FONDO ALLA PAGINA ANCHE IN VERSIONE MOBILE */
+
+/* ASSEGNO al body altezza 100% dello schermo */
+html,
+body {
+    height: 100%;
+}
+
+/* ASSEGNO al footer il 100% dell'altezza della finestra, in modo che la visualizzazione non cambi a seconda della risoluzione del dispositivo */
+footer.conteiner {
+    min-height: 100vh;
+}
+
+/* MEDIA QUERIES di bootstrap specifiche per definire quando un elemento cambia stile*/
+/* SE la dimensione massima dello schermo è minore o uguale a 992px (dimensione uguale allo stile col-lg-x)*/
+@media (max-width: 992px) {
+
+    /* ALLORA cambia la positione del footer da position absolut (fixed) a position (sticky) */
+    .footer {
+        position: sticky;
+    }
 }
