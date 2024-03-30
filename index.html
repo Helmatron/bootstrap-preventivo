@@ -28,8 +28,8 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 py-2" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./index.html">Bool Factory</a>
-                
-                <!-- BOTTONE che raccogli gli elementi della Navbar al break point -->
+
+                <!-- BOTTONE che raccoglie gli elementi della Navbar al break point -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -57,6 +57,47 @@
     <!-- MAIN -->
 
     <main>
+
+        <!-- CONTEINER -->
+        <div class="container-fluid p-5">
+            <div class="row justify-content-between">
+
+            <!-- FORM -->
+              <div class="col-sm-12 col-lg-9">
+                <form>
+                    <h1>Richiesta Preventivo</h1>
+                    <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
+                    <div class="mb-3">
+                      <label for="inputName" class="form-label fw-bold">Nome</label>
+                      <input type="text" class="form-control" id="inputName" aria-describedby="inputName">
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputSurname" class="form-label fw-bold">Cognome</label>
+                      <input type="text" class="form-control" id="inputSurname">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+
+            <!-- CARD -->
+              <div class="col-lg-3">
+                <div class="card">
+                    <img src="./img/anelli.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+              </div>
+              
+            </div>
+          </div>
+
 
     </main>
 
