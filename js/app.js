@@ -1,4 +1,4 @@
-console.log('ciao mondo!');
+// console.log('ciao mondo!');
 
 // << CONSEGNA >>
 
@@ -22,13 +22,34 @@ console.log('ciao mondo!');
 
 // LA CONSEGNA RIGUARDA SOLO LA RACCOLTA DEI DATI PER ELABORARE IL PREZZO E STAMPARLO NELL'APPOSITA SEZIONE NELL' HTML
 
-// CREARE una variabile per raccogliere il dato "tipo di lavoro" tramite ID dal FORM HTML
-// CREARE una variabile che raccolga l'inserimento del codice promozionale tramite ID dal FORM
-// CREARE un ARRAY che raccolga i codici promozionali da interrogare successivamente
 
+// CREARE un ARRAY che raccolga i codici promozionali da interrogare successivamente
+const promotionCode = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
+// console.log(promotionCode);
+
+
+// CREO una variabile per ASCOLTAE l'evento nel FORM e INVOCARE la funzione per i calcoli
+const form = document.getElementById('form-preventive')
+// console.log(form)
+form.addEventListener('submit', stampaPrezzo)
 
 
 // CREARE una funzione in modo che i calcoli si attivino quando avviene l'evento "CLIK" sul bottone nel form
+function stampaPrezzo(e) {
+
+    //Disabilitare la propagazione del submit
+    console.log(e)
+    e.preventDefault()
+
+    // CREARE una variabile per raccogliere il VALORE "tipo di lavoro" tramite ID dal FORM HTML
+    const work = document.getElementById('inputWorksType').value
+    console.log(work);
+
+    // CREARE una variabile che raccolga il VALORE del codice promozionale tramite ID dal FORM
+    const promotion = document.getElementById('inputPromotion').value
+    console.log(promotion);
+
+    }
 // RESETTARE il comportamento automatico di refresh della pagina del form
 
 // SE il tipo di valore selezionato corrisponde al "backend"

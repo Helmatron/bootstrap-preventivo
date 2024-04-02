@@ -64,7 +64,7 @@
 
                 <!-- FORM RACCOLTA DATI-->
                 <div class="col-sm-12 col-lg-9">
-                    <form>
+                    <form id="form-preventive">
                         <h1>Richiesta Preventivo</h1>
                         <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
 
@@ -93,11 +93,16 @@
                                 <option value="analysis">Project Analysis</option>
                             </select>
                         </div>
-                        <!-- TEXT AREA INFORMAZIONI -->
+                        <!-- TEXT AREA CODICE PROMOZIONALE -->
                         <div class="mb-3">
                             <label for="inputDetails" class="form-label fw-bold">Condividi con noi maggiori
                                 dettagli</label>
                             <textarea class="form-control" id="inputDetails" style="height: 100px;"></textarea>
+                        </div>
+                        <!-- CODICE PROMOZIONALE -->
+                        <div class="mb-3">
+                            <label for="inputPromotion" class="form-label fw-bold">Codice promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="inputPromotion">
                         </div>
                         <!-- CHECKBOX PRIVACY POLICY -->
                         <div class="mb-3 form-check">
