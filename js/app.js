@@ -36,9 +36,7 @@ form.addEventListener('submit', stampaPrezzo)
 
 // CREARE una funzione in modo che i calcoli si attivino quando avviene l'evento "CLIK" sul bottone nel form
 function stampaPrezzo(e) {
-
-    //Disabilitare la propagazione del submit
-    console.log(e)
+    // RESETTARE il comportamento automatico di refresh della pagina del form
     e.preventDefault()
 
     // CREARE una variabile per raccogliere il VALORE "tipo di lavoro" tramite ID dal FORM HTML
@@ -49,30 +47,43 @@ function stampaPrezzo(e) {
     const promotion = document.getElementById('inputPromotion').value
     console.log(promotion);
 
+
+
+    // SE il tipo di valore selezionato corrisponde al "backend"
+    if (work == 'backend') {
+        // ALLORA la variabile "price" sarà = 20.50€/l'ora (10 ore)
+        const price = 20.50 * 10
+        // console.log(price);
+        // CREARE una variabile con ELment method 
+        const priceElement = document.getElementById('finalPrice')
+        priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+
     }
-// RESETTARE il comportamento automatico di refresh della pagina del form
-
-// SE il tipo di valore selezionato corrisponde al "backend"
-// ALLORA la variabile "standardPrice" sarà = 20.50€/l'ora (10 ore)
-// SE il tipo di valore selezionato corrisponde al "frontend"
-// ALLORA la variabile "standardPrice" sarà = 15.30€/l'ora (10 ore)
-// SE il tipo di valore selezionato corrisponde al "analisi progettuale"
-// ALLORA la variabile "standardPrice" sarà = 33.60€/l'ora (10 ore)
-
-// CREARE una variabile per raccogliere il risultato "standardPrice"
+    
+    // SE il tipo di valore selezionato corrisponde al "frontend"
+    // ALLORA la variabile "standardPrice" sarà = 15.30€/l'ora (10 ore)
+    // SE il tipo di valore selezionato corrisponde al "analisi progettuale"
+    // ALLORA la variabile "standardPrice" sarà = 33.60€/l'ora (10 ore)
 
 
-// CREARE una variabile per raccogliere il codice promozionale dal form
-// CICLO l'array dei codici promozionali per confrontarlo con il valore inserito dall'utente
-// VERIFICARE SE l'utente ha inserito un codice promozionale
 
-// SE il valore "promotion" == 0 (l'utente non ha inserito nulla)
-// ALLORA "price" = standardPrice
-// IL PREZZO deve essere stampato nell'HTML con due valori decimali e il simbolo €
 
-// SE la variabile del codice promozionale è == a uno dei valori presenti nell'array
-// ALLORA "price" = standardPrice - 25%
+    // CREARE una variabile per raccogliere il codice promozionale dal form
+    // CICLO l'array dei codici promozionali per confrontarlo con il valore inserito dall'utente
+    // VERIFICARE SE l'utente ha inserito un codice promozionale
 
-// ALTRIMENTI "price" = standardPrice
-// Comunicare all'utente che il codice inserito non è valido
+    // SE il valore "promotion" == 0 (l'utente non ha inserito nulla)
+    // ALLORA "price" = standardPrice
+    // IL PREZZO deve essere stampato nell'HTML con due valori decimali e il simbolo €
+
+    // SE la variabile del codice promozionale è == a uno dei valori presenti nell'array
+    // ALLORA "price" = standardPrice - 25%
+
+    // ALTRIMENTI "price" = standardPrice
+    // Comunicare all'utente che il codice inserito non è valido
+
+}
+
+
+
 
