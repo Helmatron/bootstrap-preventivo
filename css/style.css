@@ -22,8 +22,12 @@ footer.conteiner {
 /* SE la dimensione massima dello schermo è minore o uguale a 992px (dimensione uguale allo stile col-lg-x)*/
 @media (max-width: 992px) {
 
-    /* ALLORA cambia la positione del footer da position absolut (fixed) a position (sticky) */
+    /* ALLORA cambia la positione del footer da position absolut (fixed- difinito nella classe <div> nellìHTML del footer) a position (sticky) */
     .footer {
         position: sticky;
+        bottom: 0;
     }
 }
+
+/* Questo metodo non considera gli adattamenti dovuti all'eventuale modifica dell 'height' della Viewport dell'utente: causando problemi di sovrapposizione del footer con gli elementi in fondo alla pagina*/
+/* PROVARE A USARE IL METODO ALTERNATIVO CON <div> e classe .push per verificare se funziona meglio di questo sistema */
