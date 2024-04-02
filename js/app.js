@@ -50,81 +50,68 @@ function stampaPrezzo(e) {
     for (let i = 0; i < promotionCode.length; i++) {
         const checkCode = promotionCode[i];
         console.log(checkCode);
-    
 
-    //VERIFICO SE il campo dei codici promozionali è stato compilato o no
-    // SE il valore = 0
-    if (promotion == 0) {
-        // ALLORA prosegue la funzione per calcolare il prezzo senza sconto
 
-        // SE il tipo di valore selezionato corrisponde al "backend"
-        if (work == 'backend') {
-            // ALLORA la variabile "price" sarà = 20.50€/l'ora (10 ore)
-            const price = 20.50 * 10
-            // console.log(price);
-            // CREARE una variabile con ELment method per recuperare lID dal DOM e stamparlo nel paragrafo ocn ID "finalPrice"
-            const priceElement = document.getElementById('finalPrice')
-            priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+        //VERIFICO SE il campo dei codici promozionali è stato compilato o no
+        // SE il valore è vuoto
+        if (promotion == '') {
 
-            // SE il tipo di valore selezionato corrisponde al "frontend"
-        } else if (work == 'frontend') {
-            // ALLORA la variabile "price" sarà = 15.30€/l'ora (10 ore)
-            const price = 15.30 * 10
-            // STAMPO il vaolre nell' HTML
-            const priceElement = document.getElementById('finalPrice')
-            priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+            // ALLORA prosegue la funzione per calcolare il prezzo senza sconto
+            // SE il tipo di valore selezionato corrisponde al "backend"
+            if (work == 'backend') {
+                // ALLORA la variabile "price" sarà = 20.50€/l'ora (10 ore)
+                const price = 20.50 * 10
+                // console.log(price);
+                // CREARE una variabile con ELment method per recuperare lID dal DOM e stamparlo nel paragrafo ocn ID "finalPrice"
+                const priceElement = document.getElementById('finalPrice')
+                priceElement.innerHTML = '&euro; ' + price.toFixed(2)
 
-            // SE il tipo di valore selezionato corrisponde al "analysis"
-        } else if (work == 'analysis') {
-            // ALLORA la variabile "price" sarà = 33.60€/l'ora (10 ore)
-            const price = 33.60 * 10
-            // STAMPO il vaolre nell' HTML
-            const priceElement = document.getElementById('finalPrice')
-            priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+                // SE il tipo di valore selezionato corrisponde al "frontend"
+            } else if (work == 'frontend') {
+                // ALLORA la variabile "price" sarà = 15.30€/l'ora (10 ore)
+                const price = 15.30 * 10
+                // STAMPO il vaolre nell' HTML
+                const priceElement = document.getElementById('finalPrice')
+                priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+
+                // SE il tipo di valore selezionato corrisponde a "analysis"
+            } else if (work == 'analysis') {
+                // ALLORA la variabile "price" sarà = 33.60€/l'ora (10 ore)
+                const price = 33.60 * 10
+                // STAMPO il vaolre nell' HTML
+                const priceElement = document.getElementById('finalPrice')
+                priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+            }
+
+
+            // ALTRIMENTI SE è stato inserito uno dei codici promozionali
+        } else if (promotion == checkCode) {
+            // ALLORA verifica il lavoro selezionato e calcola i prezzi con lo sconto del 25%
+            if (work == 'backend') {
+
+                const price = (20.50 * 10) * 0.25
+                const priceElement = document.getElementById('finalPrice')
+                priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+
+            } else if (work == 'frontend') {
+
+                const price = (15.30 * 10) * 0.25
+                const priceElement = document.getElementById('finalPrice')
+                priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+
+            } else if (work == 'analysis') {
+
+                const price = (33.60 * 10) * 0.25
+                const priceElement = document.getElementById('finalPrice')
+                priceElement.innerHTML = '&euro; ' + price.toFixed(2)
+            }
+
+
+            // ALTRIMENTI mostra messaggio di avviso per codice sbagliato
+        } else if (promotion !== checkCode) {
+            alert('Codice promozionale non valido')
         }
 
-        // ALTRIMENTI SE è stato inserito uno dei codici promozionali
-    } else if (promotion == checkCode) {
-        // ALLORA verifica il lavoro selezionato e calcola i prezzi con lo sconto del 25%
-        if (work == 'backend') {
-            
-            const price = (20.50 * 10) * 0.25
-            const priceElement = document.getElementById('finalPrice')
-            priceElement.innerHTML = '&euro; ' + price.toFixed(2)
-
-        } else if (work == 'frontend') {
-
-            const price = (15.30 * 10) * 0.25
-            const priceElement = document.getElementById('finalPrice')
-            priceElement.innerHTML = '&euro; ' + price.toFixed(2)
-
-        } else if (work == 'analysis') {
-    
-            const price = (33.60 * 10) * 0.25
-            const priceElement = document.getElementById('finalPrice')
-            priceElement.innerHTML = '&euro; ' + price.toFixed(2)
-        }
-
-        // ALTRIMENTI mostra messaggio di avviso per codice sbagliato
-    } else if (promotion !== checkCode) {
-         return alert('Codice promozionale non valido')
-     }
-
-
-
-
-
-
-   
-    // SE il valore "promotion" == 0 (l'utente non ha inserito nulla)
-    // ALLORA "price" = standardPrice
-    // IL PREZZO deve essere stampato nell'HTML con due valori decimali e il simbolo €
-
-    // SE la variabile del codice promozionale è == a uno dei valori presenti nell'array
-    // ALLORA "price" = standardPrice - 25%
-
-    // ALTRIMENTI "price" = standardPrice
-    // Comunicare all'utente che il codice inserito non è valido
     }
 }
 
