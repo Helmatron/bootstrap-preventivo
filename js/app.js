@@ -1,5 +1,3 @@
-// console.log('ciao mondo!');
-
 // << CONSEGNA >>
 
 // Quando l’utente fa click sul bottone submit del form, il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste. 
@@ -36,7 +34,7 @@ function stampaPrezzo(e) {
 
     // CREARE una variabile per raccogliere il VALORE "tipo di lavoro" tramite ID dal FORM HTML
     const work = document.getElementById('inputWorksType').value
-    console.log(work);
+    // console.log(work);
 
     function prezzoStandard(work) {
         // SE il tipo di valore selezionato corrisponde al "backend"
@@ -53,32 +51,44 @@ function stampaPrezzo(e) {
             return price = 33.60 * 10
         }
     }
+
+    // CREO una variabile per raccogliere il prezzo finale
     let prezzoFinale = prezzoStandard(work)
-    console.log(prezzoFinale);
+    // console.log(prezzoFinale);
 
-    // CREARE una variabile che raccolga il VALORE del codice promozionale tramite ID dal FORM
+    // CREO una variabile che raccolga il VALORE del codice promozionale tramite ID dal FORM
     let discount = document.getElementById('inputDiscount').value
-    console.log(discount);
+    // console.log(discount);
 
-    // CREARE un ARRAY che raccolga i codici promozionali da interrogare successivamente
+    // CREO un ARRAY che raccolga i codici promozionali da interrogare successivamente
     const discountCode = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'] // strings objects
     // console.log(discountCode);
 
+    // INTERROGO l'Array per verificare se include l'elemento discount che raccoglie la stringa del codice promoionale
     const isValid = discountCode.includes(discount)
-    console.log(isValid);
+    // console.log(isValid);
 
+
+    // SE il campo Discount è vuoto
     if (discount === '') {
+        // ALLORA invoca la funzione per calcolare il prezzo senza lo sconto
         prezzoStandard(work)
-    } else if (isValid === true) {
-        prezzoFinale = prezzoStandard(work) * 0.25
-    } else {
-        alert ('error')
-    }
-    
-    
 
+        //SE INVECE il campo discount viene riempito con uno dei codici corretti
+    } else if (isValid === true) {
+        // ALLORA calcola il prezzo finale con uno sconto del 25%
+        prezzoFinale = price - (prezzoStandard(work) * 0.25)
+
+        // ALTRIMENTI se il codice non corrisponde
+    } else {
+
+        // ALLORA avvisa l'utente che il codice non è valido
+        alert('Codice promozzionale non valido')
+    }
+
+
+    // INFINE stampa il codice nella pagina HTML
     const priceElement = document.getElementById('finalPrice')
     priceElement.innerHTML = '&euro; ' + prezzoFinale.toFixed(2);
-    console.log(prezzoFinale, typeof prezzoFinale); //number
-    prezzoFinale
+    // console.log(prezzoFinale, typeof prezzoFinale); //number
 }
