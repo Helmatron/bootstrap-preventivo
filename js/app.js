@@ -84,7 +84,7 @@ function stampaPrezzo(e) {
     } else {
 
         // ALLORA avvisa l'utente che il codice non è valido
-        alert('Codice promozzionale non valido')
+        alert('Codice promozionale non valido')
 
         //Seguendo l'idea di un mio compagno do corso
         //Sostituisco il messaggio di allert con un <p> dontro al quale inserire il testo di errore che compare nell'html
