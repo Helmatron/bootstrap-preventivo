@@ -10,7 +10,8 @@
 
 // L’utente potrebbe decidere di utilizzare un codice promozionale tra i seguenti: YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
 
-// Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale. Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
+// Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale.
+// Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
 
 // Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
 
@@ -84,6 +85,12 @@ function stampaPrezzo(e) {
 
         // ALLORA avvisa l'utente che il codice non è valido
         alert('Codice promozzionale non valido')
+
+        //Seguendo l'idea di un mio compagno do corso
+        //Sostituisco il messaggio di allert con un <p> dontro al quale inserire il testo di errore che compare nell'html
+        // const pElement = document.getElementById('errorDiscount')
+        // pElement.innerHTML = '► Codice inserito non valido';
+
     }
 
 

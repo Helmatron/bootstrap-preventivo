@@ -64,9 +64,14 @@
 
                 <!-- FORM RACCOLTA DATI-->
                 <div class="col-sm-12 col-lg-9">
-                    <form id="form-preventive">
+                    <form id="form-preventive" class=" needs-validation" novalidate>
                         <h1>Richiesta Preventivo</h1>
                         <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
+
+                        <!-- MESSAGGIO DI ERRORE -->
+                        <!-- <div class="mb-3 text-danger">
+                            <p id="errorPrivacy"></p>
+                        </div> -->
 
                         <!-- NOME -->
                         <div class="mb-3">
@@ -100,7 +105,7 @@
                             <textarea class="form-control" id="inputDetails" style="height: 100px;"></textarea>
                         </div>
                         <!-- CODICE PROMOZIONALE -->
-                        <div class="mb-3">
+                        <div id="discountElement" class="mb-3">
                             <label for="inputDiscount" class="form-label fw-bold">Codice promozionale (opzionale)</label>
                             <input type="text" class="form-control" id="inputDiscount">
                         </div>
